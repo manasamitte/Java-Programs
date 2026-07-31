@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Calculator {
+    public static void main(String[] args) {
+        // Create a Scanner object to read user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user for the first number
+        System.out.print("Enter the first number: ");
+        double num1 = scanner.nextDouble();
+
+        // Prompt the user for the second number
+        System.out.print("Enter the second number: ");
+        double num2 = scanner.nextDouble();
+
+        // Perform arithmetic operations
+        double sum = num1 + num2;
+        double difference = num1 - num2;
+        double product = num1 * num2;
+        
+        // Display the results
+        System.out.println("\n--- Results ---");
+        System.out.println("Addition (+" + "): " + sum);
+        System.out.println("Subtraction (-" + "): " + difference);
+        System.out.println("Multiplication (*" + "): " + product);
+
+        // Check for division by zero to prevent runtime errors
+        if (num2 != 0) {
+            double quotient = num1 / num2;
+            System.out.println("Division (/" + "): " + quotient);
+        } else {
+            System.out.println("Division (/" + "): Cannot divide by zero.");
+        }
+
+        // Close the scanner resource
+        scanner.close();
+    }
+}
